@@ -1,0 +1,28 @@
+body {
+    background-color: #92A8D1; 
+    margin: 4px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+}
+
+.columnContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.columnContainer div {
+    border: 1px solid black;
+    margin-right: -1px;
+    margin-bottom: -1px;
+    color: black
+    padding: 10vh;
+    background-color:white;
+}
+
+.columnContainer div:hover {
+    background-color: gray;
+}
