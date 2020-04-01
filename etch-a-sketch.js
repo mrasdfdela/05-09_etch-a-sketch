@@ -5,11 +5,11 @@ function createDivs(num=4) {
 
         for (j=0; j<num; j++){
             var colEl = document.createElement("div")
-            // colEl.classList.add('columnContainer')
             colEl.textContent = ` `
             colEl.style.padding = `${80/(num*2)}vh`
             colEl.setAttribute('shade',0)
-            darkenDivs(colEl)
+            // darkenDivs(colEl)
+            coloredDivs(colEl)
 
             rowEl.appendChild(colEl)
         }
@@ -33,17 +33,23 @@ function updateNumDivs() {
 createDivs()
 updateNumDivs()
 
-function darkenDivs(box){
-        box.addEventListener("mouseover", function(e){
-            shade = box.getAttribute("shade")
-            shade = Number(shade) + 1
-            box.setAttribute("shade",shade)
+// function darkenDivs(box){
+//     box.addEventListener("mouseover", function(e){
+//         shade = box.getAttribute("shade")
+//         shade = Number(shade) + 1
+//         box.setAttribute("shade",shade)
 
-            s = 255 - (shade*25)
-            box.style.background = `rgb(${s},${s},${s})`
+//         s = 255 - (shade*25)
+//         box.style.background = `rgb(${s},${s},${s})`
+//     })
+// }
+
+function coloredDivs(box){
+    box.addEventListener("mouseover", function(e){
+        r = Math.floor(Math.random()*256)
+        g = Math.floor(Math.random()*256)
+        b = Math.floor(Math.random()*256)
+
+        box.style.background = `rgb(${r},${g},${b})`
     })
-}
-
-function coloredDivs(){
-    boxes = document.querySelectorAll("")
 }
