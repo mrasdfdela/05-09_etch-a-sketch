@@ -9,6 +9,7 @@ function createDivs(num=4) {
             colEl.textContent = ` `
             colEl.style.padding = `${80/(num*2)}vh`
             colEl.setAttribute('shade',0)
+            darkenDivs(colEl)
 
             rowEl.appendChild(colEl)
         }
@@ -31,3 +32,18 @@ function updateNumDivs() {
 
 createDivs()
 updateNumDivs()
+
+function darkenDivs(box){
+        box.addEventListener("mouseover", function(e){
+            shade = box.getAttribute("shade")
+            shade = Number(shade) + 1
+            box.setAttribute("shade",shade)
+
+            s = 255 - (shade*25)
+            box.style.background = `rgb(${s},${s},${s})`
+    })
+}
+
+function coloredDivs(){
+    boxes = document.querySelectorAll("")
+}
